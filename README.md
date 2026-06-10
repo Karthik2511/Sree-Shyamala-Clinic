@@ -2,6 +2,8 @@
 
 A high-performance, responsive, and secure web application and administrative ecosystem designed for a cardiology clinic. Built with React 18, Vite, Tailwind CSS, Node.js Express, and Supabase.
 
+👉 **Live Demo**: [transcendent-entremet-0861f6.netlify.app](https://transcendent-entremet-0861f6.netlify.app/)
+
 This showcase repository demonstrates the project structure, architectural choices, and design aesthetics of the complete patient-facing clinic website and its corresponding administration portal, without exposing private patient records, database credentials, or proprietary business details.
 
 ---
@@ -62,7 +64,7 @@ graph TD
 ## 📂 Codebase Directory Outline
 
 ```
-clinic-website-showcase/
+Sree-Shyamala-Clinic/
 ├── admin/                         # Administrative Panel skeleton
 │   └── README.md                  # Admin features, guards, and realtime setup
 ├── backend/                       # Express integration server
