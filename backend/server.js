@@ -16,7 +16,6 @@ app.use(express.json())
 const BOOKINGS_FILE = path.join(__dirname, 'data', 'bookings.json')
 const LOGS_FILE = path.join(__dirname, 'data', 'logs.json')
 
-// Helper function to read database files
 async function readJsonFile(filePath, defaultValue = []) {
   try {
     const content = await fs.readFile(filePath, 'utf-8')
@@ -26,7 +25,6 @@ async function readJsonFile(filePath, defaultValue = []) {
   }
 }
 
-// Helper function to write database files
 async function writeJsonFile(filePath, data) {
   try {
     await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -36,10 +34,6 @@ async function writeJsonFile(filePath, data) {
   }
 }
 
-/**
- * Endpoint: POST /api/bookings
- * Saves an appointment booking and dispatches callback webhooks.
- */
 app.post('/api/bookings', async (req, res) => {
   const { booking, source } = req.body
   if (!booking || !booking.name || !booking.phone) {
@@ -55,7 +49,6 @@ app.post('/api/bookings', async (req, res) => {
 
   await writeJsonFile(BOOKINGS_FILE, bookings)
 
-  // Log notification callback activity
   const logs = await readJsonFile(LOGS_FILE)
   logs.push({
     bookingId: booking.id,
@@ -67,10 +60,6 @@ app.post('/api/bookings', async (req, res) => {
   res.status(201).json({ success: true, booking })
 })
 
-/**
- * Endpoint: GET /api/bookings
- * Returns saved bookings (for local synchronization).
- */
 app.get('/api/bookings', async (req, res) => {
   const bookings = await readJsonFile(BOOKINGS_FILE)
   res.json({ bookings })

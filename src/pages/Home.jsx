@@ -45,9 +45,7 @@ export default function Home({ onAppointmentClick }) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section className="relative w-full min-h-[600px] flex items-center bg-[#0F172A] text-white pt-20 overflow-hidden">
-        {/* Decorative Grid Overlays */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#EF4444_1px,transparent_1px)] [background-size:16px_16px]" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-3xl" />
 
@@ -79,7 +77,6 @@ export default function Home({ onAppointmentClick }) {
           </div>
 
           <div className="hidden lg:flex justify-center relative">
-            {/* Mock Dashboard / Interface Showcase Graphic */}
             <div className="w-96 h-96 bg-gradient-to-br from-[#DC2626]/20 to-red-950/40 rounded-3xl border border-red-500/20 p-8 flex flex-col justify-between shadow-2xl relative">
               <Heart className="w-12 h-12 text-[#DC2626] animate-pulse" />
               <div className="space-y-2">
@@ -100,7 +97,6 @@ export default function Home({ onAppointmentClick }) {
         </div>
       </section>
 
-      {/* Stats Section */}
       <Reveal>
         <section className="py-16 px-4 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -114,7 +110,6 @@ export default function Home({ onAppointmentClick }) {
         </section>
       </Reveal>
 
-      {/* Services Section */}
       <Reveal>
         <section className="py-24 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -148,7 +143,6 @@ export default function Home({ onAppointmentClick }) {
         </section>
       </Reveal>
 
-      {/* Booking Prompt Banner */}
       <Reveal>
         <section className="bg-gradient-to-r from-[#DC2626] to-[#991B1B] text-white py-20 px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">

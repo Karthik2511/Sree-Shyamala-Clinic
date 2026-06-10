@@ -2,9 +2,6 @@ import { supabase } from './supabaseClient'
 
 const BACKEND_URL = import.meta.env.VITE_BOOKING_API_URL || 'http://localhost:3001'
 
-/**
- * Normalizes appointment data layout for UI state consistency
- */
 export function buildBookingPayload(booking) {
   return {
     id: booking.id,
@@ -21,9 +18,6 @@ export function buildBookingPayload(booking) {
   }
 }
 
-/**
- * Formats booking input to fit database schema design
- */
 function buildDatabaseBookingRow(booking) {
   return {
     name: booking.name.trim(),
@@ -38,14 +32,10 @@ function buildDatabaseBookingRow(booking) {
   }
 }
 
-/**
- * Submits the booking request to database and secondary integrations
- */
 export async function submitBooking(booking) {
   const payload = buildBookingPayload(booking)
   const dbRow = buildDatabaseBookingRow(booking)
 
-  // 1. Insert into Supabase (Primary Datastore)
   const { data, error } = await supabase
     .from('bookings')
     .insert([dbRow])
@@ -56,7 +46,6 @@ export async function submitBooking(booking) {
     throw error
   }
 
-  // 2. Dispatch notifications via webhook integrations (Optional background tasks)
   const webhooks = [
     import.meta.env.VITE_BOOKING_EMAIL_WEBHOOK_URL,
     import.meta.env.VITE_BOOKING_SMS_WEBHOOK_URL
@@ -77,9 +66,6 @@ export async function submitBooking(booking) {
   return data
 }
 
-/**
- * Fetches booked slots to disable them in the user calendar interface
- */
 export async function fetchBookedSlots() {
   const { data, error } = await supabase
     .from('bookings')

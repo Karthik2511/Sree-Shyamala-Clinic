@@ -65,38 +65,38 @@ graph TD
 
 ```
 Sree-Shyamala-Clinic/
-├── admin/                         # Administrative Panel skeleton
-│   └── README.md                  # Admin features, guards, and realtime setup
-├── backend/                       # Express integration server
-│   └── server.js                  # Routing, webhook dispatches, local file backups
-├── screenshots/                   # Production-captured interface graphics
+├── admin/
+│   └── README.md
+├── backend/
+│   └── server.js
+├── screenshots/
 │   ├── home_page.png
 │   ├── services_page.png
 │   ├── about_page.png
 │   └── appointment_modal.png
-├── src/                           # Frontend React source code
+├── src/
 │   ├── components/
-│   │   ├── AppointmentModal.jsx   # Multi-step slot calendar booking modal
-│   │   ├── Header.jsx             # Fixed responsive navigation header
-│   │   ├── Footer.jsx             # Site footers & contact linkages
-│   │   └── Reveal.jsx             # Intersection Observer scroll reveal helper
+│   │   ├── AppointmentModal.jsx
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── Reveal.jsx
 │   ├── lib/
-│   │   ├── bookingService.js      # Decoupled database insertions & API calls
-│   │   └── supabaseClient.js      # Supabase JavaScript client initializer
+│   │   ├── bookingService.js
+│   │   └── supabaseClient.js
 │   ├── pages/
-│   │   ├── Home.jsx               # Landing page with stats and services
-│   │   ├── About.jsx              # Credentials, certifications, and background
-│   │   ├── Services.jsx           # Cardiology solutions catalogue
-│   │   └── Contact.jsx            # Location details and contact information
-│   ├── App.jsx                    # Routing configuration and layout shell
-│   ├── main.jsx                   # React application entry-point
-│   └── index.css                  # Tailwinds base, directives, and custom keyframes
-├── .env.example                   # Environment configuration variables template
-├── index.html                     # HTML boilerplate and viewport settings
-├── package.json                   # Project packages and build scripts
-├── postcss.config.js              # CSS post-processing setup
-├── tailwind.config.js             # HSL-tailored cardiac colors and style layout config
-└── vite.config.js                 # Vite dev-server specifications
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   └── Contact.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── .env.example
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+└── vite.config.js
 ```
 
 ---

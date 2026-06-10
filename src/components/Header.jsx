@@ -29,7 +29,6 @@ export default function Header({ onAppointmentClick }) {
     <header className={`fixed w-full top-0 z-50 bg-white border-b border-gray-100 transition-all duration-300 ${isScrolled ? 'shadow-[0_8px_24px_rgba(0,0,0,0.08)]' : 'shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-transform duration-300 hover:scale-[1.02]">
             <div className="p-2 bg-red-100 rounded-full text-[#DC2626]">
               <Heart className="h-6 w-6 fill-[#DC2626]" />
@@ -42,7 +41,6 @@ export default function Header({ onAppointmentClick }) {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden lg:flex space-x-1">
             {menuItems.map((item) => (
               <NavLink
@@ -55,7 +53,6 @@ export default function Header({ onAppointmentClick }) {
             ))}
           </nav>
 
-          {/* Appointment Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={onAppointmentClick}
@@ -65,7 +62,6 @@ export default function Header({ onAppointmentClick }) {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 rounded-full hover:bg-gray-100 transition"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

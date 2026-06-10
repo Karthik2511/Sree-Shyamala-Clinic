@@ -4,7 +4,7 @@ import { format, addDays, isToday, isTomorrow } from 'date-fns'
 import { submitBooking, fetchBookedSlots } from '../lib/bookingService'
 
 export default function AppointmentModal({ onClose }) {
-  const [step, setStep] = useState(1) // 1: Date & Time, 2: Patient Form, 3: Success Status
+  const [step, setStep] = useState(1)
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
   const [formData, setFormData] = useState({
@@ -21,10 +21,9 @@ export default function AppointmentModal({ onClose }) {
   const [bookedSlots, setBookedSlots] = useState([])
   const [loadingAvailability, setLoadingAvailability] = useState(true)
 
-  // Calendar dates generation (next 30 days, skipping Sundays)
   const availableDates = useMemo(() => {
     return Array.from({ length: 30 }, (_, i) => addDays(new Date(), i))
-      .filter(date => date.getDay() !== 0) // Skip Sundays
+      .filter(date => date.getDay() !== 0)
   }, [])
 
   const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM']
@@ -103,7 +102,6 @@ export default function AppointmentModal({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full overflow-hidden transition-all">
-        {/* Header */}
         <div className="bg-gradient-to-r from-[#DC2626] to-[#991B1B] text-white p-6 flex justify-between items-center">
           <h2 className="text-xl font-bold font-serif">
             {step === 1 ? 'Select Appointment Slot' : step === 2 ? 'Provide Patient Info' : 'Success'}
@@ -113,7 +111,6 @@ export default function AppointmentModal({ onClose }) {
           </button>
         </div>
 
-        {/* Progress Tracker */}
         <div className="bg-gray-100 h-1 flex">
           <div className={`h-full flex-1 ${step >= 1 ? 'bg-[#DC2626]' : 'bg-gray-200'} transition-all`} />
           <div className={`h-full flex-1 ${step >= 2 ? 'bg-[#DC2626]' : 'bg-gray-200'} transition-all`} />
@@ -123,7 +120,6 @@ export default function AppointmentModal({ onClose }) {
         <div className="p-6">
           {step === 1 && (
             <div className="space-y-6">
-              {/* Dates grid */}
               <div>
                 <label className="text-sm font-semibold text-gray-700 flex items-center gap-2 mb-3">
                   <Calendar className="w-4 h-4 text-[#DC2626]" /> Date Selection
@@ -149,7 +145,6 @@ export default function AppointmentModal({ onClose }) {
                 </div>
               </div>
 
-              {/* Time grid */}
               {selectedDate && (
                 <div>
                   <label className="text-sm font-semibold text-gray-700 flex items-center gap-2 mb-3">

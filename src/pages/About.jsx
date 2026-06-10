@@ -10,7 +10,6 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white pt-24">
-      {/* Banner */}
       <section className="bg-gray-50 py-16 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold font-serif text-gray-900 mb-4">About the Clinic & Specialists</h1>
@@ -20,7 +19,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Main bio */}
       <Reveal>
         <section className="py-20 px-4 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -33,7 +31,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* Photo stub / Graphic */}
           <div className="bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 rounded-3xl p-8 flex flex-col justify-center items-center text-center space-y-4 shadow-sm h-80">
             <span className="text-red-600 font-bold uppercase tracking-widest text-xs">Certified Care</span>
             <h3 className="text-2xl font-bold text-gray-900 font-serif">Board-Certified Specialists</h3>
@@ -44,7 +41,6 @@ export default function About() {
         </section>
       </Reveal>
 
-      {/* Credentials */}
       <Reveal>
         <section className="bg-gray-50 py-20 px-4">
           <div className="max-w-7xl mx-auto space-y-12">

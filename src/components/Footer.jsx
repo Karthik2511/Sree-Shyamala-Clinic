@@ -8,7 +8,6 @@ export default function Footer({ onAppointmentClick }) {
     <footer className="relative bg-[#0b0908] text-white pt-12 pb-6 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pt-4">
-          {/* Brand */}
           <div className="md:pr-2">
             <h3 className="text-lg font-bold text-[#f1cf9c] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
               Syamala Clinic
@@ -18,7 +17,6 @@ export default function Footer({ onAppointmentClick }) {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4 font-semibold">Navigation</h4>
             <ul className="space-y-3">
@@ -37,7 +35,6 @@ export default function Footer({ onAppointmentClick }) {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4 font-semibold">Contact</h4>
             <div className="space-y-3">
@@ -60,7 +57,6 @@ export default function Footer({ onAppointmentClick }) {
             </div>
           </div>
 
-          {/* Appointment */}
           <div>
             <h4 className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4 font-semibold">Quick Booking</h4>
             <p className="text-gray-400 text-sm mb-4">
@@ -75,7 +71,6 @@ export default function Footer({ onAppointmentClick }) {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-white/10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs text-center md:text-left">
